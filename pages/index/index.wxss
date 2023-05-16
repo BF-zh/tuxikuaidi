@@ -4,3 +4,21 @@
   justify-content: space-between;
   align-items: center;
 }
+.text-icon{
+  margin-right: 15px;
+  color: #ffffff;
+  padding: .5em;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  border-radius: 50%;
+  background-color: var(--bg);
+}
+.cell-group{
+  margin-bottom: 15px !important;
+}
+.selectTags{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}

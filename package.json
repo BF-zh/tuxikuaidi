@@ -1,5 +1,5 @@
 {
-  "name": "xiaoyoubang",
+  "name": "tuxikuaidi",
   "version": "1.0.0",
   "description": "",
   "main": ".eslintrc.js",
@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vant/weapp": "^1.10.18",
-    "add": "^2.0.6"
+    "@vant/weapp": "^1.10.18"
   }
 }

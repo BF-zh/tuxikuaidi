@@ -8,25 +8,59 @@
     附近的寄件点 >
   </view>
 </view>
-<van-cell-group inset>
-  <van-cell>
-    <view slot="title">
-      <view>
+
+<van-cell-group  custom-class="cell-group" inset>
+  <van-cell title="从哪里寄出？" center is-link label="填写收获地址">
+    <view slot="icon">
+      <view class="text-icon" style="--bg:#25a1f5">
         寄
       </view>
-      <view>
-        从那里寄出？
-        <text>点击填写寄件地址</text>
-      </view>
-      <van-icon name="star" />
-      
-      </view>
+    </view>
   </van-cell>
-  <van-cell>
-    <view slot="title">
-      <view>
+  <van-cell title="您寄到哪儿？" center is-link label="填写收获地址" >
+    <view slot="icon">
+      <view class="text-icon" style="--bg:#ff8a15">
         收
       </view>
     </view>
   </van-cell>
+</van-cell-group>
+
+<van-cell-group inset 
+custom-class="cell-group" style="margin-top: 15px;">
+  <van-cell border="{{false}}" title="物品类型" value="查看禁寄物品"/>
+  <van-cell>
+    <view slot="title">
+      <view class="selectTags">
+        <van-button wx:key="{{item.id}}" bind:click="handleClickTagItem" color="{{item.id===goods.activeId?goods.activeColor:goods.defaultColor}}" wx:for="{{goods.type}}" data-item="{{item}}" size="mini" round>
+        {{item.text}}
+        </van-button>
+        <van-field
+        wx:if="{{goods.edit}}"
+        value="{{ username }}"
+        clearable
+        placeholder="请输入"
+        bind:click-icon="onClickIcon"
+        />
+      </view>
+    </view>
+  </van-cell>
+  <van-field
+    label="预估重量"
+    input-align="right"
+    placeholder="请选择"
+    readonly
+    right-icon="arrow"
+    border="{{ false }}"
+    bind:change="onChange"
+  />
+  <van-field
+    label="对业务员说"
+    input-align="right"
+    placeholder="你有什么想说的"
+    readonly
+    right-icon="arrow"
+    border="{{ false }}"
+    bind:change="onChange"
+  />
 </van-cell-group>

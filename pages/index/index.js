@@ -5,7 +5,43 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    goods:{
+      activeId:0,
+      activeColor:"#2faffa",
+      defaultColor:"#ccc",
+      edit:false,
+      type:[
+        {
+          id:0,
+          text:"文件",
+          edit:false
+        },
+        {
+          id:1,
+          text:"数码产品",
+          edit:false
+        },
+        {
+          id:2,
+          text:"生活用品",
+          edit:false
+        },
+        {
+          id:3,
+          text:"服饰",
+          edit:false
+        },
+        {
+          id:4,
+          text:"食品",
+          edit:false
+        },{
+          id:5,
+          text:"其他",
+          edit:true
+        }
+      ]
+    }
   },
 
   /**
@@ -62,5 +98,18 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  /**
+   * 点击类型按钮的回掉
+   * @param {*} e 默认事件
+   */
+  handleClickTagItem({target}){
+    const {edit,id} = target.dataset.item
+    this.setData({
+      "goods.edit":edit
+    })
+    this.setData({
+      "goods.activeId":id
+    })
   }
 })

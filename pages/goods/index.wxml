@@ -1,2 +1,16 @@
-<!--pages/goods/index.wxml-->
-<text>pages/goods/index.wxml</text>
+<van-tabs animated active="{{ active }}" bind:change="onChange">
+  <van-tab title="快递超市">
+      <van-tabs animated>
+        <van-tab title="待取件">
+          <van-empty description="暂时没有你的快递信息" />
+        </van-tab>
+        <van-tab title="已取件">
+          <van-empty description="暂时没有你的快递信息" />
+        </van-tab>
+        <van-tab title="全部">
+          <van-empty description="暂时没有你的快递信息" />
+        </van-tab>
+    </van-tabs>
+  </van-tab>
+  <van-tab title="快递柜">内容 2</van-tab>
+</van-tabs>

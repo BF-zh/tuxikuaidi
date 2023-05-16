@@ -3,7 +3,7 @@ Component({
 		active: 0,
 		list: [
 			{
-				icon: 'home-o',
+				icon: 'goods-collect-o',
 				text: '到店寄件',
 				url: '/pages/index/index'
 			},

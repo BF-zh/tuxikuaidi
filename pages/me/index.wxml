@@ -1,10 +1,11 @@
 <!--pages/me/index.wxml-->
+<view class="round-bg"></view>
 <van-cell-group inset 
 custom-class="cell-group">
   <van-grid border="{{false}}"  column-num="3">
-    <van-grid-item icon="qr" text="我的签收码" />
-    <van-grid-item icon="guide-o" text="我的寄件" />
-    <van-grid-item icon="award-o" text="实名认证" />
+    <van-grid-item icon-color="#ff9d58" icon="qr" text="我的签收码" />
+    <van-grid-item icon-color="#27cde8" icon="guide-o" text="我的寄件" />
+    <van-grid-item icon-color="#3aa7ff" icon="award-o" text="实名认证" />
   </van-grid>
 </van-cell-group>
 <van-cell-group inset custom-class="cell-group">
