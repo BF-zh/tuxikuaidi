@@ -1,0 +1,7 @@
+.bg{
+  height: 100px;
+  background: #1fa4f0;
+}
+.cell-group{
+  margin-top: 15px !important;
+}

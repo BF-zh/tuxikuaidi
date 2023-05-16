@@ -1,0 +1,16 @@
+page{
+background-color: #eeeeee;
+color: #fff;
+padding-bottom: 70px;
+}
+.round-bg{
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: -1;
+  width: 4000rpx;
+  height: 4000rpx;
+  border-radius: 50%;
+  transform: translate(-50%,-95%);
+  background: #1fa4f0;
+}

@@ -1,0 +1,17 @@
+<!--pages/me/index.wxml-->
+<van-cell-group inset 
+custom-class="cell-group">
+  <van-grid border="{{false}}"  column-num="3">
+    <van-grid-item icon="qr" text="我的签收码" />
+    <van-grid-item icon="guide-o" text="我的寄件" />
+    <van-grid-item icon="award-o" text="实名认证" />
+  </van-grid>
+</van-cell-group>
+<van-cell-group inset custom-class="cell-group">
+  <van-cell title="地址管理" is-link />
+  <van-cell title="亲友代取" is-link />
+  <van-cell title="绑定手机" is-link />
+  <van-cell title="收获偏好设置" is-link />
+  <van-cell title="包裹投诉" is-link />
+  <van-cell title="查询物流" is-link />
+</van-cell-group>

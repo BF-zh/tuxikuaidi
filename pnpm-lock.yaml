@@ -1,0 +1,19 @@
+lockfileVersion: '6.0'
+
+dependencies:
+  '@vant/weapp':
+    specifier: ^1.10.18
+    version: 1.10.18
+  add:
+    specifier: ^2.0.6
+    version: 2.0.6
+
+packages:
+
+  /@vant/weapp@1.10.18:
+    resolution: {integrity: sha512-BEmBGVKTBfP7Re41k27Tm6lKjdWmEN0APxLWMeiYtXn7koVxrzSAdwZgZguUD7vm1lMsMhAgAIq0IMoMm/ubkQ==}
+    dev: false
+
+  /add@2.0.6:
+    resolution: {integrity: sha512-j5QzrmsokwWWp6kUcJQySpbG+xfOBqqKnup3OIk1pz+kB/80SLorZ9V8zHFLO92Lcd+hbvq8bT+zOGoPkmBV0Q==}
+    dev: false

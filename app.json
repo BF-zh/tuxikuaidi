@@ -1,0 +1,54 @@
+{
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [{
+        "pagePath": "pages/index/index"
+      },
+      {
+        "pagePath": "pages/goods/index"
+      },
+      {
+        "pagePath": "pages/me/index"
+      }
+    ]
+  },
+  "pages": [
+    "pages/index/index",
+    "pages/goods/index",
+    "pages/me/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1fa4f0",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-tag": "@vant/weapp/tag/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-tree-select": "@vant/weapp/tree-select/index",
+    "van-action-sheet": "@vant/weapp/action-sheet/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-radio": "@vant/weapp/radio/index",
+    "van-radio-group": "@vant/weapp/radio-group/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-picker": "@vant/weapp/picker/index",
+    "van-popup": "@vant/weapp/popup/index"
+  }
+}

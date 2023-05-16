@@ -1,0 +1,32 @@
+<view class="round-bg"></view>
+<view class="title">
+  <view style="font-size:larger;">
+  <van-icon name="location"/>
+    请选择寄件点
+  </view>
+  <view style="font-size:small;">
+    附近的寄件点 >
+  </view>
+</view>
+<van-cell-group inset>
+  <van-cell>
+    <view slot="title">
+      <view>
+        寄
+      </view>
+      <view>
+        从那里寄出？
+        <text>点击填写寄件地址</text>
+      </view>
+      <van-icon name="star" />
+      
+      </view>
+  </van-cell>
+  <van-cell>
+    <view slot="title">
+      <view>
+        收
+      </view>
+    </view>
+  </van-cell>
+</van-cell-group>
