@@ -1,5 +1,5 @@
 <view class="round-bg"></view>
-<view class="title">
+<view class="title" bindtap="toSelectSendPlace">
   <view style="font-size:larger;">
   <van-icon name="location"/>
     请选择寄件点
@@ -10,14 +10,14 @@
 </view>
 
 <van-cell-group  custom-class="cell-group" inset>
-  <van-cell title="从哪里寄出？" center is-link label="填写收获地址">
+  <van-cell title="从哪里寄出？" data-key="Start" bind:click="handleToEditPlace" center is-link label="填写收获地址">
     <view slot="icon">
       <view class="text-icon" style="--bg:#25a1f5">
         寄
       </view>
     </view>
   </van-cell>
-  <van-cell title="您寄到哪儿？" center is-link label="填写收获地址" >
+  <van-cell title="您寄到哪儿？" bind:click="handleToEditPlace" data-key="End" center is-link label="填写收获地址" >
     <view slot="icon">
       <view class="text-icon" style="--bg:#ff8a15">
         收
@@ -32,7 +32,7 @@ custom-class="cell-group" style="margin-top: 15px;">
   <van-cell>
     <view slot="title">
       <view class="selectTags">
-        <van-button wx:key="{{item.id}}" bind:click="handleClickTagItem" color="{{item.id===goods.activeId?goods.activeColor:goods.defaultColor}}" wx:for="{{goods.type}}" data-item="{{item}}" size="mini" round>
+        <van-button bind:click="handleClickTagItem" color="{{item.id===goods.activeId?goods.activeColor:goods.defaultColor}}"  wx:key="index" wx:for="{{goods.type}}" data-item="{{item}}" size="mini" round>
         {{item.text}}
         </van-button>
         <van-field

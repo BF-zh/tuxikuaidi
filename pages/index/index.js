@@ -111,5 +111,25 @@ Page({
     this.setData({
       "goods.activeId":id
     })
+  },
+  /**
+   * 跳转到附近的寄件点
+   */
+  toSelectSendPlace(){
+    wx.navigateTo({
+      url: '/pages/selectPlace/index',
+    })
+  },
+  handleToEditPlace({target}){
+    const data={
+      url:"/pages/index/index",
+      ...target.dataset
+    }
+    wx.navigateTo({
+      url: "/pages/editPlace/index",
+      success(e){
+        e.eventChannel.emit("data",data)
+      }
+    })
   }
 })

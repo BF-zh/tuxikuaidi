@@ -18,7 +18,9 @@
   "pages": [
     "pages/index/index",
     "pages/goods/index",
-    "pages/me/index"
+    "pages/me/index",
+    "pages/selectPlace/index",
+    "pages/editPlace/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -28,6 +30,7 @@
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
+    "my-edit-place": "/components/editPlace/index",
     "van-icon": "@vant/weapp/icon/index",
     "van-grid": "@vant/weapp/grid/index",
     "van-grid-item": "@vant/weapp/grid-item/index",

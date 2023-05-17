@@ -1,0 +1,7 @@
+.place-title{
+  display: flex;
+  justify-content: space-between;
+}
+.cell-group{
+  margin-top: 15px !important;
+}
