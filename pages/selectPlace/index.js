@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    activeId:2,
     vicinityPlace: [{
       id: 0,
       place: "上锦顾源34号自取点",
