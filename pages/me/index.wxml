@@ -1,5 +1,5 @@
 <!--pages/me/index.wxml-->
-<view class="round-bg"></view>
+<view class="round-bg" style="--bg-height:10%;"></view>
 <van-cell-group inset 
 custom-class="cell-group">
   <van-grid border="{{false}}"  column-num="3">

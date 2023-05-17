@@ -128,7 +128,7 @@ Page({
     wx.navigateTo({
       url: "/pages/editPlace/index",
       success(e){
-        e.eventChannel.emit("data",data)
+        e.eventChannel.emit("editInfo",data)
       }
     })
   }

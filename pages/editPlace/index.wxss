@@ -1,1 +1,10 @@
 /* pages/editPlace/index.wxss */
+page{
+  color:#2c2c2d
+}
+.save-button{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 40px;
+}
