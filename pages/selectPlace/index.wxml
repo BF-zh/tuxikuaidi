@@ -1,7 +1,7 @@
 
 <van-tabs sticky color="#1fa4f0">
   <van-tab title="附近门店">
-    <van-cell-group inset wx:key="index" style="{{activeId===item.id?'--active:var(--primary-color);':''}}" custom-class="cell-group" wx:for="{{vicinityPlace}}">
+    <van-cell-group bindtap="handleSelectPlace" data-item="{{item}}" inset wx:key="index" style="{{activeId===item.id?'--active:var(--primary-color);':''}}" custom-class="cell-group" wx:for="{{vicinityPlace}}">
       <van-cell use-label-slot>
         <view slot="title">
          <view class="place-title">

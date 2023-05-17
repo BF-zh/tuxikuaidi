@@ -2,7 +2,7 @@
 <view class="title" bindtap="toSelectSendPlace">
   <view style="font-size:larger;">
   <van-icon name="location"/>
-    请选择寄件点
+    {{place.select?place.select.place:'请选择寄件点'}}
   </view>
   <view style="font-size:small;">
     附近的寄件点 >
@@ -10,14 +10,14 @@
 </view>
 
 <van-cell-group  custom-class="cell-group" inset>
-  <van-cell title="从哪里寄出？" data-title="编辑寄件人信息" data-key="Start" bind:click="handleToEditPlace" center is-link label="填写收获地址">
+  <van-cell title="{{place.send?place.sendText:'从哪里寄出？'}}" data-title="编辑寄件人信息" data-key="{{place.sendKey}}" bind:click="handleToEditPlace" center is-link label="{{place.send?place.sendDetailText:'填写收获地址'}}">
     <view slot="icon">
       <view class="text-icon" style="--bg:#25a1f5">
         寄
       </view>
     </view>
   </van-cell>
-  <van-cell title="您寄到哪儿？" data-title="编辑收件人信息" bind:click="handleToEditPlace" data-key="End" center is-link label="填写收获地址" >
+  <van-cell title="{{place.receive?place.receiveText:'您寄到哪儿？'}}" data-title="编辑收件人信息" bind:click="handleToEditPlace" data-key="{{place.receiveKey}}" center is-link label="{{place.receive?place.receiveDetailText:'填写收获地址'}}" >
     <view slot="icon">
       <view class="text-icon" style="--bg:#ff8a15">
         收

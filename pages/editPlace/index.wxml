@@ -17,6 +17,7 @@
   <van-field
     required
     label="地址"
+    value="{{placeFormat}}"
     readonly
     placeholder="请选择省-市-区"
     right-icon="arrow"
@@ -25,6 +26,7 @@
   />
   <van-field
     required
+    model:value="{{ detailPlace }}"
     label="详细地址"
     placeholder="请输入地址"
   />

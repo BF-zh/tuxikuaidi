@@ -1,4 +1,5 @@
 // pages/index/index.js
+const {ENUM} = require("../../utils/index")
 Page({
 
   /**
@@ -41,6 +42,17 @@ Page({
           edit:true
         }
       ]
+    },
+    place:{
+      sendKey:'',
+      receiveKey:'',
+      send:null,
+      sendText:"",
+      sendDetailText:"",
+      receive:null,
+      receiveText:'',
+      receiveDetailText:'',
+      select:null
     }
   },
 
@@ -48,7 +60,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.setData({
+      "place.sendKey":ENUM.SEND_KEY
+    })
+    this.setData({
+      "place.receiveKey":ENUM.RECEIVE_KEY
+    })
   },
 
   /**
@@ -63,6 +80,38 @@ Page({
    */
   onShow() {
     this.getTabBar().init();
+    const send =  wx.getStorageSync(ENUM.SEND_KEY)||null
+    const receive =  wx.getStorageSync(ENUM.RECEIVE_KEY)||null
+    const select = wx.getStorageSync(ENUM.SELECT_ITEM)||null
+
+    if(select){
+      this.setData({
+        "place.select":select
+      })
+    }
+    console.log(send);
+    if(send){
+      this.setData({
+        "place.sendDetailText":`${send.place.province.text}-${send.place.city.text}-${send.detailPlace}`
+      })
+      this.setData({
+        "place.sendText":`${send.name}  ${send.phone}`
+      })
+      this.setData({
+        "place.send":send
+      })
+    }
+    if(receive){
+      this.setData({
+        "place.receiveDetailText":`${receive.place.province.text}-${receive.place.city.text}-${receive.detailPlace}`
+      })
+      this.setData({
+        "place.receiveText":`${receive.name}  ${receive.phone}`
+      })
+      this.setData({
+        "place.receive":receive
+      })
+    }
   },
 
   /**

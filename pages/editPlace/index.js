@@ -11,6 +11,8 @@ Page({
     name:"",
     phone:"",
     place:"",
+    placeFormat:"",
+    detailPlace:"",
     isSaveComentPlace:false,
     treeSelect:{
       show:false,
@@ -51,7 +53,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-   
+  const key = this.data.props.key
+   const {detailPlace,place,phone,name,placeFormat,activeId,mainActiveIndex}= wx.getStorageSync(key)||{}
+   if(detailPlace) this.setData({detailPlace})
+   if(phone) this.setData({phone})
+   if(name) this.setData({name})
+   if(placeFormat) this.setData({placeFormat})
+   if(place) this.setData({place})
+   if(activeId) this.setData({"treeSelect.activeId":activeId})
+   if(mainActiveIndex) this.setData({"treeSelect.mainActiveIndex":mainActiveIndex})
   },
 
   /**
@@ -114,19 +124,45 @@ Page({
    * 点击保存
    */
   handleSubmit(){
-    const {phone,place,name,isSaveComentPlace} = this.data
+    const {phone,place,name,isSaveComentPlace,detailPlace,treeSelect,placeFormat} = this.data
     if(!name) return this.Toast("姓名不能为空")
-    if(!place) return this.Toast("地址不能为空")
+    if(!placeFormat) return this.Toast("地址不能为空")
+    if(!detailPlace) return this.Toast("详细地址不能为空")
+    if(!detailPlace.length>4) return this.Toast("详细不能小于4个字符")
+    const key = this.data.props.key
+    wx.setStorageSync(key, {
+      phone,
+      place,
+      name,
+      placeFormat,
+      detailPlace,
+      activeId:treeSelect.activeId,
+      mainActiveIndex:treeSelect.mainActiveIndex
+    })
+    wx.navigateBack()
   },
   /**
    * 点击选择地区
    */
   handleSlectPlace({target}){
     const flag = target.dataset.key
-    console.log(flag);
+    const {items,activeId,mainActiveIndex} = this.data.treeSelect
     this.setData({
       "treeSelect.show":flag
     })
+    if(!flag){
+      const main = (items[mainActiveIndex])
+      const city = main.children.find(v=>v.id===activeId)
+      const {children,...province} = main
+      if(!city) return
+      this.setData({
+        placeFormat:`${province.text}-${city.text}`
+      })
+      this.setData({
+        "place":{city,province}
+      })
+    }
+   
   },
   handleClicktreeSelectNav({ detail = {} }) {
     this.setData({

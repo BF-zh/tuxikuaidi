@@ -1,11 +1,12 @@
 // pages/sendPlace/index.js
+const {ENUM} = require("../../utils/index")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    activeId:2,
+    activeId:null,
     vicinityPlace: [{
       id: 0,
       place: "上锦顾源34号自取点",
@@ -133,7 +134,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+   const item = wx.getStorageSync(ENUM.SELECT_ITEM)
+   this.setData({
+     activeId:item.id
+   })
   },
 
   /**
@@ -183,5 +187,13 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  handleSelectPlace({currentTarget}){
+    const item = currentTarget.dataset.item
+    wx.setStorageSync(ENUM.SELECT_ITEM, item)
+    this.setData({
+      "activeId":item.id
+    })
+    wx.navigateBack()
   }
 })
