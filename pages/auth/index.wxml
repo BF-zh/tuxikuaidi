@@ -1,0 +1,10 @@
+<!--pages/auth/index.wxml-->
+<van-image width="100%" height="200" src="/static/auth-bg.png" />
+<view style="margin-top: 10px;">
+  <van-cell-group inset>
+    <van-button wx:if="{{isLogin}}" color="var(--primary-color)" 
+    bind:click="handleLoginOut" block round>退出登陆</van-button>
+    <van-button wx:else color="var(--primary-color)"
+    open-type="getUserInfo" bind:getuserinfo="handleGetUserInfo" block round>立即登陆</van-button>
+  </van-cell-group>
+</view>

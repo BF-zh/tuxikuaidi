@@ -1,0 +1,27 @@
+<!--pages/signQr/index.wxml-->
+<van-cell-group custom-class="sign-qr" inset>
+  <view class="mask" wx:if="{{fail}}">
+      <text>停留时间过长，签收码已失效</text>
+      <van-button bind:click="redraw" round color="var(--primary-color)">点击刷新 </van-button>
+  </view>
+  <view class="sign-qr-title">
+    <text>请在快递超市自助取件时出示签收码</text>
+    <view>
+      <van-icon name="eye-o" />
+      <text>查看大图</text>
+    </view>
+  </view>
+  <van-cell border="{{false}}">
+    <view slot="title">
+      <canvas style="height: 200rpx;transform: translate({{fail?'1000px':'0px'}});" canvas-id="line-qr" />
+    </view>
+  </van-cell>
+  <van-cell>
+    <view slot="title">
+      <view class="tip-text">
+        {{signInfo.content}}
+        <text>{{hide?'查看数字':'隐藏数字'}}</text>
+      </view>
+    </view>
+  </van-cell>
+</van-cell-group>

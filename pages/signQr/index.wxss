@@ -1,0 +1,32 @@
+.sign-qr{
+  margin-top: 15px !important;
+  position: relative;
+}
+.mask{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  color: #ffffff;
+  background: rgba(0, 0, 0, .4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.sign-qr-title{
+  font-size: small;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: linear-gradient(to right,#52aeeb,#39c9f8);
+}
+.tip-text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8e8e8e;
+}
