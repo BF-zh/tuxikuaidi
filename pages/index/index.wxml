@@ -28,7 +28,16 @@
 
 <van-cell-group inset 
 custom-class="cell-group" style="margin-top: 15px;">
-  <van-cell border="{{false}}" title="物品类型" value="查看禁寄物品"/>
+<van-field
+    label="物品类型"
+    input-align="right"
+    placeholder="查看违禁物品"
+    readonly
+    data-key="{{true}}"
+    right-icon="arrow"
+    border="{{ false }}"
+    bind:click-input="handleShowProhibitGoods"
+  />
   <van-cell>
     <view slot="title">
       <view class="selectTags">
@@ -37,10 +46,8 @@ custom-class="cell-group" style="margin-top: 15px;">
         </van-button>
         <van-field
         wx:if="{{goods.edit}}"
-        value="{{ username }}"
-        clearable
+        model:value="{{ customGoodsType }}"
         placeholder="请输入"
-        bind:click-icon="onClickIcon"
         />
       </view>
     </view>
@@ -50,17 +57,80 @@ custom-class="cell-group" style="margin-top: 15px;">
     input-align="right"
     placeholder="请选择"
     readonly
+    value="{{goodsCustomWeight}}"
+    data-key="{{true}}"
     right-icon="arrow"
     border="{{ false }}"
-    bind:change="onChange"
+    bind:click-input="handleSelectShowGoodsWeigthBox"
   />
   <van-field
     label="对业务员说"
+    model:value="{{tellContent}}"
     input-align="right"
+    data-key="{{true}}"
     placeholder="你有什么想说的"
     readonly
     right-icon="arrow"
     border="{{ false }}"
-    bind:change="onChange"
+    bind:click-input="handleSelectShowTellBox"
   />
 </van-cell-group>
+<van-dialog confirm-button-color="var(--primary-color)" id="van-dialog" />
+<van-action-sheet
+  data-key="{{false}}"
+  z-index="999999"
+  show="{{ goods.weight.show }}" title="预估重量"
+  bind:close="handleSelectShowGoodsWeigthBox">
+  <van-cell-group border="{{false}}" inset>
+    <van-grid border="{{false}}">
+      <van-grid-item use-slot wx:for="{{goods.weight._default}}" wx:key="index">
+        <van-button bind:click="handleClickSelectGoodsWigth" color="{{goods.weight.activeId===item.id?'var(--primary-color)':''}}" data-item="{{item}}" size="small" round>{{item.text}}</van-button>
+      </van-grid-item>
+    </van-grid>
+    <van-field
+    wx:if="{{goods.weight.isCustom}}"
+    model:value="{{ _goodsCustomWeight }}"
+    placeholder="请输入用重量"
+    type="number"
+    border="{{ false }}"
+    />
+    <van-cell>
+      <van-button bind:click="handleSaveWeight" color="var(--primary-color)" round block>确认</van-button>
+    </van-cell>
+  </van-cell-group>
+</van-action-sheet>
+<van-dialog
+  use-slot
+  close-on-click-overlay
+  show-cancel-button
+  title="写点什么吧"
+  show="{{ showTellBox }}"
+  data-key="{{false}}"
+  bind:close="handleSelectShowTellBox"
+  bind:confirm="handleSaveTellContext"
+>
+  <van-cell-group>
+    <van-field
+      model:value="{{_tellContent}}"
+      placeholder="你不想给业务员说点什么吗"
+      border="{{ false }}"
+      autosize="{{inputAutoSize}}"
+      auto-focus="{{true}}"
+      type="textarea"
+    />
+  </van-cell-group>
+</van-dialog>
+<van-cell-group custom-class="SubmitBar">
+  <van-cell>
+    <view slot="title" class="SubmitContent">
+      <view style="display: flex;font-size: small; align-items: baseline;">
+        <van-checkbox value="{{ agree }}" bind:change="handleChangeAgree">我已同意并接受</van-checkbox>
+        <navigator style="color: var(--primary-color);" url="/pages/protocol/index">《快递服务协议》</navigator>
+      </view>
+      <view>
+        <van-button disabled="{{!agree}}" custom-class="submitButton" round color="var(--primary-color)" bind:click="handleSubmitOrder">提交</van-button>
+      </view>
+    </view>
+  </van-cell>
+</van-cell-group>
+<van-toast id="van-toast" />

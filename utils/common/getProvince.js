@@ -1,4 +1,4 @@
-module.exports= function getProvince(){
+export function getProvince(){
   return [
     {
       "id": "11",

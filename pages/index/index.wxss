@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #ffffff;
 }
 .text-icon{
   margin-right: 15px;
@@ -21,4 +22,19 @@
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+}
+.SubmitBar{
+  position: absolute !important;
+  width: 100%;
+  bottom: 50px;
+}
+.SubmitContent{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.submitButton{
+  --p:3em;
+  padding-left: var(--p) !important;
+  padding-right: var(--p) !important;
 }

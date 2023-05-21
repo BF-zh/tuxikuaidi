@@ -20,12 +20,15 @@
     "pages/goods/index",
     "pages/me/index",
     "pages/selectPlace/index",
+    "pages/protocol/index",
+    "pages/auth/index",
+    "pages/signQr/index",
+    "pages/placeList/index",
     "pages/editPlace/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#1fa4f0",
-    "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json",
@@ -54,6 +57,13 @@
     "van-picker": "@vant/weapp/picker/index",
     "van-popup": "@vant/weapp/popup/index",
     "van-empty": "@vant/weapp/empty/index",
-    "van-switch": "@vant/weapp/switch/index"
+    "van-switch": "@vant/weapp/switch/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-submit-bar": "@vant/weapp/submit-bar/index",
+    "van-sticky": "@vant/weapp/sticky/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-overlay": "@vant/weapp/overlay/index"
   }
 }

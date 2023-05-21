@@ -34,9 +34,15 @@
     <van-switch size="18"  checked="{{ isSaveComentPlace }}" bind:change="handleInputEdit" data-key="isSaveComentPlace" />
   </van-cell>
 </van-cell-group>
+
+<view style="margin-top: 10px; display: flex; justify-content: center; font-size: x-small; color: var(--primary-color);">
+  进入地址簿选择 >
+</view>
+
+
 <view class="save-button">
   <van-cell-group inset >
-  <van-button bind:click="handleSubmit" color="var(--primary-color)" round type="default" block>确定</van-button>
+  <van-button bind:click="handleSubmit" color="var(--primary-color)" round block>确定</van-button>
 </van-cell-group>
 </view>
 <van-action-sheet data-key="{{false}}" bind:close="handleSlectPlace" show="{{ treeSelect.show }}" title="请选择地区">

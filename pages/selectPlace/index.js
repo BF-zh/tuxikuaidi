@@ -1,5 +1,5 @@
 // pages/sendPlace/index.js
-const {ENUM} = require("../../utils/index")
+import {ENUM} from '../../utils/index'
 Page({
 
   /**

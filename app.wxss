@@ -2,7 +2,6 @@ page{
 --bg-height:5%;
 --primary-color:#1fa4f0;
 background-color: #f0f2f6;
-color: #fff;
 padding-bottom: 70px;
 }
 .round-bg{

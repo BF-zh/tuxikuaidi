@@ -1,4 +1,4 @@
-module.exports = function getSystemInfo(){
+export function getSystemInfo(){
   const {
     statusBarHeight,
     platform,
